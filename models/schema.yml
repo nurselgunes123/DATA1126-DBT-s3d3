@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: greenweez
+    schema: gz_raw_data
+    description: data for greenweez
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: sales data for greenweez
+        columns:
+          - name: orders_id
+            description: unique id of the order
+            tests:
+              - not_null
+          - name: pdt_id
+            description: product id in the order
+            tests:
+              - not_null
+        tests:
+          - unique:
+              arguments:
+                column_name: "(orders_id || '-' || pdt_id)"
