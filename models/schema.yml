@@ -89,3 +89,38 @@ models:
         description: Total daily advertising clicks.
         tests:
           - not_null
+  - name: finance_campaigns_day
+    description: Daily financial and advertising performance including ads margin across campaigns and finance metrics.
+    columns:
+      - name: date
+        description: Finance and campaign date in descending order.
+        tests:
+          - not_null
+      - name: ads_margin
+        description: Operational margin minus daily advertising cost.
+        tests:
+          - not_null
+      - name: average_basket
+        description: Average daily order basket value.
+      - name: operational_margin
+        description: Daily operational margin.
+      - name: ads_cost
+        description: Total daily advertising cost.
+      - name: ads_impression
+        description: Total daily advertising impressions.
+      - name: ads_clicks
+        description: Total daily advertising clicks.
+      - name: quantity
+        description: Total daily quantity sold.
+      - name: revenue
+        description: Total daily revenue.
+      - name: purchase_cost
+        description: Total daily purchase cost.
+      - name: margin
+        description: Total daily gross margin.
+      - name: shipping_fee
+        description: Total daily shipping fee.
+      - name: log_cost
+        description: Total daily logistics cost.
+      - name: ship_cost
+        description: Total daily shipping cost.
