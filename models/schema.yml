@@ -52,4 +52,21 @@ sources:
       - name: criteo
         identifier: raw_gz_criteo
       - name: facebook
-        identifier: raw_gz_facebook    
+        identifier: raw_gz_facebook
+
+models:
+  - name: int_campaigns
+    description: Combined campaign metrics across AdWords, Bing, Criteo, and Facebook.
+    columns:
+      - name: date_date
+        description: Campaign date.
+        tests:
+          - not_null
+      - name: paid_source
+        description: Advertising platform name.
+        tests:
+          - not_null
+      - name: campaign_key
+        description: Campaign identifier key.
+      - name: campaign_name
+        description: Standardized campaign name across ad platforms.
