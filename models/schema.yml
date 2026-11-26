@@ -29,7 +29,7 @@ sources:
                 column_name: "(orders_id || '-' || pdt_id)"
       - name: product
         identifier: raw_gz_product
-        description: Raw product table from Greenweez
+        description: Raw product table from greenweez
         columns:
           - name: products_id
             description: Unique identifier for each product
@@ -45,3 +45,11 @@ sources:
             tests:
               - unique
               - not_null
+      - name: adwords
+        identifier: raw_gz_adwords
+      - name: bing
+        identifier: raw_gz_bing
+      - name: criteo
+        identifier: raw_gz_criteo
+      - name: facebook
+        identifier: raw_gz_facebook    
