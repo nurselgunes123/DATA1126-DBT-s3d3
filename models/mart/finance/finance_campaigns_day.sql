@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 SELECT
     f.date_date AS date,
     ROUND(f.operational_margin - COALESCE(c.ads_cost, 0), 2) AS ads_margin,
@@ -9,12 +7,10 @@ SELECT
     COALESCE(c.ads_impression, 0) AS ads_impression,
     COALESCE(c.ads_clicks, 0) AS ads_clicks,
     f.quantity,
-    ROUND(f.revenue, 2) AS revenue,
+    ROUND(f.turnover, 2) AS revenue,
     ROUND(f.purchase_cost, 2) AS purchase_cost,
-    ROUND(f.margin, 2) AS margin,
     ROUND(f.shipping_fee, 2) AS shipping_fee,
-    ROUND(f.log_cost, 2) AS log_cost,
-    ROUND(f.ship_cost, 2) AS ship_cost
+    ROUND(f.log_cost, 2) AS log_cost
 FROM {{ ref('finance_days') }} AS f
 LEFT JOIN {{ ref('int_campaigns_day') }} AS c
     ON f.date_date = c.date_date
