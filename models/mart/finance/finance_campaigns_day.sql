@@ -7,7 +7,7 @@ SELECT
     COALESCE(c.ads_impression, 0) AS ads_impression,
     COALESCE(c.ads_clicks, 0) AS ads_clicks,
     f.quantity,
-    ROUND(f.turnover, 2) AS revenue,
+    ROUND(f.turnover, 2) AS turnover,
     ROUND(f.purchase_cost, 2) AS purchase_cost,
     ROUND(f.shipping_fee, 2) AS shipping_fee,
     ROUND(f.log_cost, 2) AS log_cost
