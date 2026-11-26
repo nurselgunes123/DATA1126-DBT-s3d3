@@ -70,3 +70,22 @@ models:
         description: Campaign identifier key.
       - name: campaign_name
         description: Standardized campaign name across ad platforms.
+  - name: int_campaigns_day
+    description: Daily aggregated campaign cost, impressions, and clicks across all campaigns.
+    columns:
+      - name: date_date
+        description: Campaign date in descending order.
+        tests:
+          - not_null
+      - name: ads_cost
+        description: Total daily advertising cost.
+        tests:
+          - not_null
+      - name: ads_impression
+        description: Total daily advertising impressions.
+        tests:
+          - not_null
+      - name: ads_clicks
+        description: Total daily advertising clicks.
+        tests:
+          - not_null
